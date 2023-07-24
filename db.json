@@ -1,0 +1,206 @@
+{
+  "users": [
+    {
+      "userName": "omerfaruksunar",
+      "fullName": "omer faruk sunar",
+      "password": "U2FsdGVkX1+2dycybOaQBsRF0i9WuT+hgEbQUEB/O9Y=",
+      "id": 1
+    },
+    {
+      "userName": "ofs",
+      "fullName": "asdasd",
+      "password": "eb5b044b0c244d97ca159919d7cf8c469dd853d7",
+      "id": 2,
+      "likes": [
+        1,
+        2
+      ],
+      "bookmarks": [
+        1,
+        2
+      ]
+    },
+    {
+      "userName": "ofs",
+      "fullName": "asdasd",
+      "password": "eb5b044b0c244d97ca159919d7cf8c469dd853d7",
+      "id": 3
+    },
+    {
+      "userName": "Yusuf Taha Sunar",
+      "fullName": "Yusuf Taha Sunar",
+      "password": "56890b0082ec7962cd7bee53e8f2dc0fc325c116",
+      "id": 4
+    }
+  ],
+  "user_likes": [
+    {
+      "userId": 2,
+      "bookmarkId": 1,
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "bookmarkId": 1,
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "bookmarkId": 2,
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "bookmarkId": 1,
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "bookmarkId": 2,
+      "id": 6
+    }
+  ],
+  "user_bookmarks": [
+    {
+      "userId": 2,
+      "bookmarkId": 2,
+      "id": 1
+    }
+  ],
+  "bookmarks": [
+    {
+      "title": "Vue dökümantasyon",
+      "url": "https://v3.vuejs.org",
+      "categoryId": 1,
+      "description": "Dünyanin en güzel framework'ü",
+      "userId": 2,
+      "created_at": "2023-07-20T08:28:54.780Z",
+      "id": 1
+    },
+    {
+      "title": "müzik",
+      "url": "spotify.com",
+      "categoryId": 6,
+      "description": "müthiş müzik",
+      "userId": 2,
+      "created_at": "2023-07-20T08:44:28.590Z",
+      "id": 2
+    },
+    {
+      "title": "resim",
+      "url": "https....",
+      "categoryId": 6,
+      "description": "çok iy resim",
+      "userId": 2,
+      "created_at": "2023-07-20T08:44:58.801Z",
+      "id": 3
+    },
+    {
+      "title": "sad",
+      "url": "https",
+      "categoryId": 6,
+      "description": "asdas",
+      "userId": 2,
+      "created_at": "2023-07-20T08:45:22.475Z",
+      "id": 4
+    },
+    {
+      "title": "React",
+      "url": "www.google.com",
+      "categoryId": 2,
+      "description": "React Güzel bir dil",
+      "userId": 2,
+      "created_at": "2023-07-20T10:52:05.320Z",
+      "id": 5
+    },
+    {
+      "title": "asdasd",
+      "url": "asdasda",
+      "categoryId": 2,
+      "description": "sadasda",
+      "userId": 2,
+      "created_at": "2023-07-23T11:36:29.245Z",
+      "id": 6
+    },
+    {
+      "title": "ES6",
+      "url": "www.youtube.com",
+      "categoryId": 3,
+      "description": "frontend frontend",
+      "userId": 2,
+      "created_at": "2023-07-24T12:57:51.145Z",
+      "id": 7
+    },
+    {
+      "title": "Okçuluk",
+      "url": "https://gencizbiz.gsb.gov.tr/EGenc/Kurum/KurumList?kurumTipEnum=GenclikMerkezi",
+      "categoryId": 6,
+      "description": "Okçuluk yapmayı seviyorum..",
+      "userId": 4,
+      "created_at": "2023-07-24T13:07:01.784Z",
+      "id": 8
+    },
+    {
+      "title": "Python",
+      "url": "https://www.python.org/",
+      "categoryId": 4,
+      "description": "python öğrenmek istiyorum",
+      "userId": 4,
+      "created_at": "2023-07-24T13:18:33.720Z",
+      "id": 9
+    },
+    {
+      "title": "deneme",
+      "url": "http://",
+      "categoryId": 4,
+      "description": "deneme 1234",
+      "userId": 4,
+      "created_at": "2023-07-24T13:23:26.791Z",
+      "id": 10
+    },
+    {
+      "title": "New Test",
+      "url": "http://",
+      "categoryId": 2,
+      "description": "asdasdasdas",
+      "userId": 4,
+      "created_at": "2023-07-24T13:28:55.703Z",
+      "id": 11
+    },
+    {
+      "title": "deneme as6",
+      "url": "https://",
+      "categoryId": 2,
+      "description": "asdasdasd",
+      "userId": 2,
+      "created_at": "2023-07-24T13:35:45.709Z",
+      "id": 12
+    }
+  ],
+  "categories": [
+    {
+      "name": "Vue.js",
+      "id": 1
+    },
+    {
+      "name": "React.js",
+      "id": 2
+    },
+    {
+      "name": "Frontend",
+      "id": 3
+    },
+    {
+      "name": "Backend",
+      "id": 4
+    },
+    {
+      "name": "Cloud",
+      "id": 5
+    },
+    {
+      "name": "Sosyal Yaşam",
+      "id": 6
+    }
+  ]
+}
