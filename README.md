@@ -1,4 +1,4 @@
-# ders-6-socialmark-uygulamasi
+# BookLikeApp
 
 ## Project setup
 ```
