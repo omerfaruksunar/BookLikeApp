@@ -10,43 +10,14 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import AppHeader from '@/components/Shared/AppHeader.vue';
 import SideBar from '@/components/Account/SideBar.vue';
+import { ref,inject } from 'vue';
+const appAxios = inject("appAxios");
+const bookmarklist =ref([]);
 
-export default {
-    components : {
-        AppHeader,
-        SideBar,
-    },
-    data() {
-        return {
-            bookmarklist : [],
-            }
-        },
-    // created() {
-    //     // this.$appAxios.get("/bookmarks?_expand=category&_expand=user").then(bookmark_list_response => {
-    //     // console.log("bookmark_list_response : >>", bookmark_list_response);
-    //     // this.bookmarklist = bookmark_list_response?.data || []  ;
-    // // });
-    // },
-
-    // mounted() {
-    //     this.$socket.on("WELCOME_MESSAGE",this.WELCOME_MESSAGE);
-    // },
-
-    // methods: {
-    //     // WELCOME_MESSAGE(data) {
-    //     //     console.log(data);
-    //     // },
-    //     // SEND_MESSAGE(e){
-    //     //     // console.log(e.target.value);
-    //     //     this.$socket.emit("SEND_MESSAGE",e.target.value);
-    //     // }
-    // },
-
-
-
-
-}
+appAxios.get("/bookmarks?_expand=category&_expand=user").then(bookmark_list_response => {
+        bookmarklist.value = bookmark_list_response?.data || []  ;
+    });
 </script>

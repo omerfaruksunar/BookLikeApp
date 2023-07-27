@@ -12,32 +12,33 @@
       </span>
     </div>
 </template>
-<script>
+
+<script setup>
 import CryptoJS from "crypto-js"
-export default {
-  data() {
-    return { 
-      userData : {
-        userName:null,
-        password: null,
-      }
-    };
-  },
-  methods: {
-    onSubmit(){
-      const password = CryptoJS.HmacSHA1(this.userData.password,this.$store.getters._saltKey).toString();
-      this.$appAxios
-      .get(`/users?userName=${this.userData.userName}&password=${password}`)
+import { useStore } from "vuex";
+import { ref, inject } from "vue";
+import { useRouter } from "vue-router";
+const appAxios = inject("appAxios");
+const store = useStore();
+const router = useRouter();
+const userData = ref ({
+  userName:null,
+  password: null,
+});
+
+const onSubmit = () => {
+      const password = CryptoJS.HmacSHA1(userData.value.password,store.getters._saltKey).toString();
+      appAxios
+      .get(`/users?userName=${userData.value.userName}&password=${password}`)
       .then (login_response => {
         if(login_response ?. data ?. length > 0 ){
-          this.$store.commit("setUser",login_response ?.data[0]);
-          this.$router.push({ name : "HomePage"});
+          store.commit("setUser",login_response ?.data[0]);
+          router.push({ name : "HomePage"});
         }else {
           alert('Boyle bir kullanici bulunamadi.');
         }
         
       }).catch(e => console.log(e));
     }
-  },
-}
+
 </script>

@@ -13,33 +13,29 @@
       </span>
     </div>
 </template>
-<script>
+
+<script setup>
+
 import CryptoJS from "crypto-js"
-export default {
-  data(){
-    return{
-      userData : {
-        userName: null,
-        fullName: null,
-        password : null,
-      }
-    }
-  },
-  methods : {
-    onSave(){
-      const password = CryptoJS.HmacSHA1(this.userData.password,this.$store.getters._saltKey).toString();
+import { useStore } from "vuex";
+import { ref, inject } from "vue";
+import { useRouter } from "vue-router";
+const appAxios = inject("appAxios");
+const store = useStore();
+const router = useRouter();
+const userData = ref ({
+  userName:null,
+  fullName: null,
+  password: null,
+});
 
-      this.$appAxios.post("/users",{...this.userData, password}).then(registered_user_response => {
-        console.log("registered_user_response :>> ", registered_user_response);
-        this.$router.push({ name : "HomePage"});
+const onSave = () => {
+      const password = CryptoJS.HmacSHA1(userData.value.password,store.getters._saltKey).toString();
+
+      appAxios.post("/users",{...userData.value, password}).then(() => {
+        router.push({ name : "HomePage"});
       });
-      // console.log('Crypted password  :>>',cryptedPassword);
-      
-	// console.log(this.userData);
-
-      // const decryptedPassword = CryptoJS.AES.decrypt(cryptedPassword,key).toString(CryptoJS.enc.Utf8);
-      // console.log('decryptedPassword :>> ', decryptedPassword);
     }
-  }
-}
+
 </script>
+
